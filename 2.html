@@ -1,12 +1,38 @@
 <!doctype html>
 <html>
   <head>
-    <title>WEB1 - CSS</title>
+    <title>WEB1 - JavaScript</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
+    <input type="button" value="dark" onclick="
+      var target = document.querySelector('body');
+      if(this.value === 'dark'){
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        this.value='bright';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+      } else{
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        this.value='dark';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
+    ">
     <div id="grid">
       <ol>
         <li><a href="1.html">HTML</a></li>
@@ -14,31 +40,8 @@
         <li><a href="3.html">JavaScript</a></li>
       </ol>
       <div id="article">
-        <h2>CSS</h2>
-        <p>
-          Hey, you, get off my cloud
-          You don't know me, and you don't know my style
-          Gettin' lifted, never coming down
-          Gettin' lifted
-
-          Gettin' dumb on the drum like rum-pum-pum-pum
-          Better run, when I come, what a bomb bomb
-          Sippin' on coke and rum, gettin' so drunk
-          Everyone wonderin' where she come from?
-
-          Got gold on my necklace, gold on my wrists
-          Girls gettin' mad cause their boys want a kiss
-          Fast with the cash, I just throw it in the bag
-          Everything I wanna have (well I think you get the gist)
-
-          Upside downside, inside outside
-          Hittin' you from every angle there's no doubt
-          Poetry in motion, coast to coast and
-          Rub in in your skin like lotion
-
-          I got myself a 40
-          I got myself a shorty
-          And I'm about to go get lifted
+        <h2>JavaScript</h2>
+        <p>cobalt blue is this year's color.
         </p>
       </div>
     </div>
