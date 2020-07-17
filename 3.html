@@ -4,15 +4,13 @@
     <title>WEB1 - JavaScript</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1><a href="index.html">WEB</a></h1>
-    <input type="button" value="dark" onclick="
+    <script>
+    function darkbrighthandler(self){
       var target = document.querySelector('body');
-      if(this.value === 'dark'){
+      if(self.value === 'dark'){
         target.style.backgroundColor='black';
         target.style.color='white';
-        this.value='bright';
+        self.value='bright';
 
         var alist = document.querySelectorAll('a');
         var i = 0;
@@ -23,7 +21,7 @@
       } else{
         target.style.backgroundColor='white';
         target.style.color='black';
-        this.value='dark';
+        self.value='dark';
 
         var alist = document.querySelectorAll('a');
         var i = 0;
@@ -32,6 +30,13 @@
           i = i + 1;
         }
       }
+    }
+    </script>
+  </head>
+  <body>
+    <h1><a href="index.html">WEB</a></h1>
+    <input type="button" value="dark" onclick="
+      darkbrighthandler(this);
     ">
     <div id="grid">
       <ol>
