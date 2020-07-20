@@ -5,32 +5,40 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <script>
-    function darkbrighthandler(self){
-      var target = document.querySelector('body');
-      if(self.value === 'dark'){
-        target.style.backgroundColor='black';
-        target.style.color='white';
-        self.value='bright';
-
+    var Links = {
+      setColor:function(color){
         var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i < alist.length){
-          alist[i].style.color = 'powderblue';
-          i = i + 1;
-        }
-      } else{
-        target.style.backgroundColor='white';
-        target.style.color='black';
-        self.value='dark';
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i < alist.length){
-          alist[i].style.color = 'blue';
-          i = i + 1;
+        var i=0;
+        while(i<alist.length){
+          alist[i].style.color = color;
+          i=i+1;
         }
       }
     }
+    var Body = {
+      setColor:function(color){
+        document.querySelector('body').style.color = color;
+      },
+      setBackgroundColor:function(color){
+        document.querySelector('body').style.backgroundColor = color;
+      }
+    }
+    function darkbrighthandler(self){
+      var target = document.querySelector('body');
+      if(self.value === 'dark'){
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        self.value='bright';
+
+        Links.setColor('powderblue');
+      } else{
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        self.value='dark';
+
+        Links.setColor('blue')
+        }
+      }
     </script>
   </head>
   <body>
